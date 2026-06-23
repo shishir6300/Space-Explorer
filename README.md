@@ -28,17 +28,6 @@
 
 ---
 
-## 📸 Screenshots
-
-| Hero Section | Planets Grid |
-|---|---|
-| ![Hero](screenshots/hero.png) | ![Planets](screenshots/planets.png) |
-
-| Planet Modal | NASA APOD |
-|---|---|
-| ![Modal](screenshots/modal.png) | ![APOD](screenshots/apod.png) |
-
----
 
 ## 🚀 Getting Started
 
