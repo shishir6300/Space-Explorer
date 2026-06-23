@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Explorer 🌌</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-brand">🌌 SPACE EXPLORER</div>
+    <ul class="nav-links">
+      <li><a href="#apod">Today's Image</a></li>
+      <li><a href="#planets">Planets</a></li>
+      <li><a href="#missions">Missions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="stars" id="stars"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">NASA · ISRO · SpaceX</p>
+      <h1>Explore the <span class="glow-text">Universe</span></h1>
+      <p class="hero-sub">Journey through our solar system — 8 planets, countless mysteries, one curious mind.</p>
+      <div class="hero-buttons">
+        <a href="#planets" class="btn-primary">Start Exploring →</a>
+        <a href="#apod" class="btn-ghost">Today's Space Image</a>
+      </div>
+    </div>
+    <div class="hero-orbit">
+      <div class="orbit-ring ring1"></div>
+      <div class="orbit-ring ring2"></div>
+      <div class="orbit-planet sun">☀️</div>
+    </div>
+  </section>
+
+  <!-- NASA APOD -->
+  <section class="section" id="apod">
+    <div class="section-label">NASA API · LIVE</div>
+    <h2>Today's Image of the Universe</h2>
+    <p class="section-sub">Pulled live from NASA's Astronomy Picture of the Day API</p>
+    <div class="apod-card" id="apodCard">
+      <div class="apod-loading">
+        <div class="spinner"></div>
+        <p>Fetching today's image from NASA...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANET SEARCH -->
+  <section class="section" id="planets">
+    <div class="section-label">SOLAR SYSTEM</div>
+    <h2>The 8 Planets</h2>
+    <p class="section-sub">Click any planet to explore its facts</p>
+    <div class="search-bar">
+      <input type="text" id="planetSearch" placeholder="🔍 Search planets..." oninput="searchPlanets()">
+    </div>
+    <div class="planets-grid" id="planetsGrid"></div>
+  </section>
+
+  <!-- PLANET MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- MISSIONS -->
+  <section class="section" id="missions">
+    <div class="section-label">SPACE HISTORY</div>
+    <h2>Historic Missions</h2>
+    <p class="section-sub">Milestones that changed humanity's understanding of space</p>
+    <div class="missions-grid" id="missionsGrid"></div>
+  </section>
+
+  <!-- FUN FACTS TICKER -->
+  <div class="facts-ticker">
+    <div class="ticker-label">🚀 SPACE FACTS</div>
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-label">GET IN TOUCH</div>
+    <h2>Contact Us</h2>
+    <p class="section-sub">Questions about space? We'd love to hear from you.</p>
+    <form class="contact-form" onsubmit="submitForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="name" placeholder="Neil Armstrong" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="email" placeholder="neil@nasa.gov" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Your Message</label>
+        <textarea id="message" placeholder="What's your favorite planet?" rows="4"></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Send Message 🚀</button>
+      <div class="form-success" id="formSuccess">✅ Message sent! We'll reply faster than light (almost).</div>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">🌌 SPACE EXPLORER</div>
+    <p>Built with NASA Open API · HTML · CSS · JavaScript</p>
+    <p class="footer-links">
+      <a href="https://www.nasa.gov" target="_blank">NASA</a> ·
+      <a href="https://www.isro.gov.in" target="_blank">ISRO</a> ·
+      <a href="https://www.spacex.com" target="_blank">SpaceX</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
